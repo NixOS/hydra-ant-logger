@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="HydraAntLogger" basedir="." default="jar">
     <property name="output" value="bin"/>
-    <property name="version" value="2010.1"/>
+    <property name="version" value="SNAPSHOT"/>
 
     <target name="compile" depends="create">
         <javac destdir="bin">            
