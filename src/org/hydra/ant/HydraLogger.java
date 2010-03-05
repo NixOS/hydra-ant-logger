@@ -1,4 +1,4 @@
-p ackage org.hydra.ant;
+package org.hydra.ant;
 
 import java.io.PrintStream;
 
