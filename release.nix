@@ -11,7 +11,7 @@ let
 
       with import nixpkgs { system = "i686-linux"; };
 
-      let version = "2010.2" + (if officialRelease then "" else "-r"+toString src.rev) ;
+      let version = "2010.3" + (if officialRelease then "" else "-r"+toString src.rev) ;
       in
       releaseTools.antBuild {
         name = "hydra-ant-logger";
@@ -19,7 +19,7 @@ let
         antProperties = [
           { name = "version"; value = version; }
         ];        
-        inherit jre ant;
+        inherit jre ant hydraAntLogger;
         buildInputs = [jre ant]; 
         jars = [ "hydra-ant-logger-${version}.jar" ];
       };
