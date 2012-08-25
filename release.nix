@@ -1,4 +1,4 @@
-{ nixpkgs ? ../../src/nixpkgs }:
+{ nixpkgs ? ../nixpkgs }:
 
 let
 
@@ -19,9 +19,10 @@ let
         antProperties = [
           { name = "version"; value = version; }
         ];        
-        inherit jre ant hydraAntLogger;
-        buildInputs = [jre ant]; 
         jars = [ "hydra-ant-logger-${version}.jar" ];
+        preConfigure = ''
+          mkdir lib
+        '';
       };
 
     };
